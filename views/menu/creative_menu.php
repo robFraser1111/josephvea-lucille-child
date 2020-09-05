@@ -55,7 +55,9 @@ if ($has_custom_menu_styling) {
 			<?php get_template_part('views/utils/polylang_switcher_creative'); ?>
 
 			<div class="hmb_menu hmb_creative" style="width: auto;">
-				<a href="mailto:contact@josephvea,com"><p style="color: #ffffff;">Contact</p></a>
+				<a href="mailto:contact@josephvea,com">
+					<span class="lnr lnr-envelope lnr_mobile"></span>
+				</a>
 			</div>
 
 			<?php if (LUCILLE_SWP_is_woocommerce_active()) { ?>
