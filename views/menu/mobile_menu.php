@@ -26,22 +26,38 @@ $mobile_header_width = 'lc_swp_' . $mobile_header_width;
 	</div>
 
 	<div class="creative_right">
-		<div class="hmb_menu hmb_mobile" style="margin-top: -10px;">
-			<a href="mailto:contact@josephvea,com">
-				<span class="lnr lnr-envelope lnr_mobile"></span>
-			</a>
-		</div>
 
-		<?php if (LUCILLE_SWP_is_woocommerce_active()) { ?>
-			<div class="mobile_menu_icon creative_header_icon lc_icon_creative_cart">
-				<a class="cart-contents mobile_menu_icon" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_html__('View your shopping cart', 'lucille'); ?>">
-					<i class="fa fa-shopping-bag" aria-hidden="true"></i>
-					<span class="cart-contents-count">
-						<?php echo WC()->cart->get_cart_contents_count(); ?>
-					</span>
+		<?php if (is_page_template('template-basic.php')) { ?>
+
+			<div class="mobile_menu_icon creative_header_icon">
+				<a href="mailto:contact@josephvea.com">
+					<i class="fa fa-envelope"></i>
 				</a>
 			</div>
-		<?php } ?>
+
+		<?php } else { ?>
+
+			<div class="hmb_menu hmb_mobile">
+				<div class="hmb_inner">
+					<span class="hmb_line hmb1 transition2 mobile_hmb_line"></span>
+					<span class="hmb_line hmb2 transition2 mobile_hmb_line"></span>
+					<span class="hmb_line hmb3 transition2 mobile_hmb_line"></span>
+				</div>
+			</div>
+
+			<?php if (LUCILLE_SWP_is_woocommerce_active()) { ?>
+				<div class="mobile_menu_icon creative_header_icon lc_icon_creative_cart">
+					<a class="cart-contents mobile_menu_icon" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_html__('View your shopping cart', 'lucille'); ?>">
+						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+						<span class="cart-contents-count">
+							<?php echo WC()->cart->get_cart_contents_count(); ?>
+						</span>
+					</a>
+				</div>
+
+		<?php }
+		} ?>
+
 	</div>
 
 	<div class="creative_left">
